@@ -10,6 +10,12 @@ spec:
   -  protocol: tcp
      targetPort: 80
      port: 80
+  -  protocol: tcp
+     targetPort: 443
+     port: 443
+  -  protocol: ssh
+     targetPort: 22
+     port: 22
 
 
   
