@@ -16,3 +16,5 @@ spec:
   - name: my-volume
     hostPath:
       path: /data
+  - name: my-volume2
+    emptyDir: {}
