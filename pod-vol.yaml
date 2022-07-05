@@ -7,6 +7,11 @@ spec:
     volumeMounts:
     - name: my-volume
       mountPath: /output
+  - name: alpine
+    image: alpine-con
+    volumeMounts:
+    - name: my-volume
+      mountPath: /home
   volumes:
   - name: my-volume
     hostPath:
