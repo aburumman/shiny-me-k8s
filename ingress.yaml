@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /somepath
+        pathType: Prefix
+        backend:
+          service:
+            name: svc-clusterip
+            port:
+              number: 80
