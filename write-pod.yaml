@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: shared-vol-pod
+spec:
+  containers:
+  - name: busybox1
+    image: busybox
+    restartPolicy: Never
+    command: ["/bin/bash",]
+    volumeMount:
+    - name: my-vol
+      mountPath: /input
+  - name: busybox2
+    image: busybox
+    restartPolicy: Never
+    command: ["echo"]
+    volumeMount:
+    - name: node-vol
+      mountPath: /input
+  volumes:
+    - name: my-vol
+      hostPath: /var/data
+    - name: node-vol
+      emptyDir: {}
