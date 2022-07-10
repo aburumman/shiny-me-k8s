@@ -1,0 +1,17 @@
+job.batch/hello created
+apiVersion: batch/v1
+kind: Job
+metadata:
+  creationTimestamp: null
+  name: hello
+spec:
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: busybox:1.28
+        name: hello
+        resources: {}
+      restartPolicy: Never
+status: {}
