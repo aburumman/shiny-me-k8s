@@ -9,11 +9,14 @@ spec:
     - Ingress
     - Egress
   ingress:
-    - to:
+    - from:
       - namespaceSelector:
         podSelector:
           matchLabels:
             k8s-app: kube-dns
+    - from: # Aloows traffic from smae namespace
+      - podSelector: {}
+        
       ports:
         - port: 53
           protocol: UDP 
